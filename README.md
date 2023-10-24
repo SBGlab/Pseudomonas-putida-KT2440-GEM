@@ -7,14 +7,14 @@
 
 #### Description
 
-{{ fill in a short description or the paper abstract }}
+{{ 
+Genome-scale reconstructions of metabolism are computational species-specific knowledge bases able to compute systemic metabolic properties. We present a comprehensive and validated reconstruction of the biotechnologically relevant bacterium Pseudomonas putida KT2440 that greatly expands computable predictions of its metabolic states. The reconstruction represents a significant reactome expansion over available reconstructed bacterial metabolic networks. Specifically, iJN1462 (i) incorporates several hundred additional genes and associated reactions resulting in new predictive capabilities, including new nutrients supporting growth; (ii) was validated by in vivo growth screens that included previously untested carbon (48) and nitrogen (41) sources; (iii) yielded gene essentiality predictions showing large accuracy when compared with a knock-out library and Bar-seq data; and (iv) allowed mapping of its network to 82 P. putida sequenced strains revealing functional core that reflect the large metabolic versatility of this species, including aromatic compounds derived from lignin. Thus, this study provides a thoroughly updated metabolic reconstruction and new computable phenotypes for P. putida, which can be leveraged as a first step toward understanding the pan metabolic capabilities of Pseudomonas.
+ }}
 
 
 #### Citation
 
-{{ provide the citation once available, for example:
-  > Lu, H., Li, F., Sánchez, B.J. et al (2019). A consensus S. cerevisiae metabolic model Yeast8 and its ecosystem for comprehensively probing cellular metabolism. Nat Commun 10, 3586 [doi:10.1038/s41467-019-11581-3](https://doi.org/10.1038/s41467-019-11581-3)
-
+{{ Nogales, Juan, et al. "High‐quality genome‐scale metabolic modelling of Pseudomonas putida highlights its broad metabolic capabilities." Environmental microbiology 22.1 (2020): 255-269.
 }}
 
 
@@ -28,26 +28,30 @@
 **Type of model:** {{ reconstruction; curated }}  
 **Model source:** {{ [YeastMetabolicNetwork](http://doi.org/10.1038/nbt1492) }}  
 **Omic source:** {{ genomics; metabolomics }}  
-**Taxonomic name:** {{ _Saccharomyces cerevisiae_ }}  
-**Taxonomy ID:** {{ [taxonomy:559292](https://identifiers.org/taxonomy:559292) }}  
-**Genome ID:** {{ [insdc.gca:GCA_000146045.2](https://identifiers.org/insdc.gca:GCA_000146045.2)  }}  
+**Taxonomic name:** {{ _Pseudomonas putida_ }}  
+**Taxonomy ID:** {{ [taxonomy:160488](https://identifiers.org/taxonomy:160488) }}  
+**Genome ID:** {{ [insdc.gca:	GCA_000007565.2](https://identifiers.org/insdc.gca:GCA_000007565.2)  }}  
 **Metabolic system:** {{ general metabolism }}  
 **Tissue:**  
 **Bioreactor:**    
 **Cell type:**  
 **Cell line:**  
-**Strain:** {{ S288C }}  
+**Strain:** {{ KT2440 }}  
 **Condition:** {{ aerobic; glucose-limited; defined media }}  
 
 
 ### Installation
 
-{{ Be mindful of users who do not have a typical background - provide a clear overview of the required software. Also, there might be different requirements for users and collaborators. }}
+{{ - Install Cobra }}
 
 
 ### Usage
 
-{{ Describe how to load and save the model. }}
+```
+import cobra
+model=cobra.io.read_sbml_model('iJN1463.xml')
+model.summary()
+```
 
 
 ### Contributing
